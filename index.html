@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Test
+    </title>
+
+<style>
+</style>
+<script type="text/javascript">  
+
+
+var input = document.getElementById('textbox');
+var title = "Form";
+ function titler()
+ {
+   document.title = textbox.value;
+ }
+
+
+// Function to change text section
+   function myText1(type)
+   {
+     if(type == "text")
+     {
+       var x = document.getElementById("myText1").value;
+       document.getElementById("div1text").innerHTML = x;
+     }
+     
+     if(type == "title")
+     {
+       var x = document.getElementById("myTitle1").value;
+       document.getElementById("div1title").innerHTML = x;
+     }
+
+   }
+
+   function myText2(type) 
+   {
+     if(type == "text")
+     {
+     var x = document.getElementById("myText2").value;
+     document.getElementById("div2text").innerHTML = x;
+     }
+
+     if(type == "title")
+     {
+     var x = document.getElementById("myTitle2").value;
+     document.getElementById("div2title").innerHTML = x;
+     }
+   }
+
+   function myText3(type) 
+   {
+     if(type == "text")
+     {
+     var x = document.getElementById("myText3").value;
+     document.getElementById("div3text").innerHTML = x;
+     }
+
+     if(type == "title")
+     {
+     var x = document.getElementById("myTitle3").value;
+     document.getElementById("div3title").innerHTML = x;
+     }
+   }
+
+   function myText4(type) 
+   {
+     if(type == "text")
+     {
+     var x = document.getElementById("myText4").value;
+     document.getElementById("div4text").innerHTML = x;
+     }
+
+     if(type == "title")
+     {
+     var x = document.getElementById("myTitle4").value;
+     document.getElementById("div4title").innerHTML = x;
+     }
+   }
+
+   function myHeader() 
+   {
+     var x = document.getElementById("myHeader").value;
+     document.getElementById("header").innerHTML = x;
+   }
+
+  function showHideDiv(ele) 
+  {
+    var srcElement = document.getElementById(ele);
+    if (srcElement != null) 
+    {
+     if (srcElement.style.display == "block") 
+     {
+      srcElement.style.display = 'none';
+     }
+     else 
+     {
+      srcElement.style.display = 'block';
+     }
+     return false;
+    }
+  }
+ function textAlign1(aligner)
+ {
+   document.getElementById("div1").style.textAlign = aligner;
+ }
+
+ function textAlign2(aligner)
+ {
+   document.getElementById("div2").style.textAlign = aligner;
+ }
+ function textAlign3(aligner)
+ {
+   document.getElementById("div3").style.textAlign = aligner;
+ }
+
+ function textAlign4(aligner)
+ {
+   document.getElementById("div4").style.textAlign = aligner;
+ }
+
+ function setHref(box, li) 
+ {
+   link = document.getElementById(box).value;
+   var strLink = "mailto:" + link;
+   document.getElementById(li).setAttribute("href",strLink);
+   document.getElementById(li).innerHTML = link;
+ }
+
+
+
+  function greet()
+  {
+    // Get the users name from local storage
+    name = localStorage.getItem("name");
+ 
+    // if the name does not exist, have them create an account
+    if (name == null || name == "null")
+    {
+      alert("Hi, Stranger!");
+      name = prompt("What is your name?");
+      password = prompt("What would you like your password to be?");
+      localStorage.setItem("name", name);
+      localStorage.setItem("password", password);
+    } 
+
+    // Otherwise (meaning a name does exist) have them log in using their password
+    else 
+    {
+      // Declare the variables that we want to save
+      bodyColor = document.body.style.background;
+      
+      // Say hello to the user
+      alert ("Hi, " + name + "!");
+      // Have them enter the password to continue
+      pass = prompt ("Enter your password:");
+
+      // Check if the password is equal to the password we have saved in local storage
+      if (pass == localStorage.getItem("password"))
+      {
+        // Save the changes to local Storage
+        WriteControls();
+      }
+      
+      // If it is not, send an alert to the user so they know what is going on
+      else 
+      {
+        alert("Password is incorrect! Please try again.");
+      }
+    }
+  } // end function  
+
+
+// Activate our controls
+  function WriteControls()
+  {
+    var SettingsWindow = window.open("Settings", "SettingsWindow", "width=500, height=500");
+    SettingsWindow.document.write("var myWindow = window.open("", "MsgWindow", "width=200,height=100");
+  myWindow.document.write("<p>This is 'MsgWindow'. I am 200px wide and 100px tall!</p>");");
+  }
+</script>
+
+
+    </head>
+
+ <body>
+<div style="text-align: center; font-size: 25pt;">
+<h1 id="header">Mid-Atlantic SAFE</h1>
+</div>
+
+<div id="header" style="text-align: center;">
+  <button style=" font-size: 14pt; background-color: orange; color: black; font-weight: bold; width: 90px; height: 30px; text-align: center;" onclick="window.location.href = 'file:///Users/daniel/Desktop/Webpages/SAFEwebsite(Home).html';">Home</button>
+  &emsp;
+  <button style="font-size: 14pt; background-color: orange; color: black; font-weight: bold; width: 120px; height: 30px;" onclick="window.location.href = 'file:///Users/daniel/Desktop/Webpages/SAFEwebsite(HostDrive).html';">Host Drive</button>
+  &emsp;
+  <button style="font-size: 14pt; background-color: orange; color: black; font-weight: bold; width: 90px; height: 30px; text-align: center;" onclick="window.location.href = 'file:///Users/daniel/Desktop/Webpages/SAFEwebsite(Chapters).html';">Locations</button>
+</div>
+
+<div id="div1" style="text-align: center;">
+     <p id="div1title" style="text-align: center; font-weight: bold;">Stuffed Animals</p>
+     <p id="div1text">Our favorite item to give to young children. Donate now!</p>
+     <a id="link1" target="_blank">Email</a>
+</div>
+<div id="div2" style="text-align: center;">
+     <p id="div2title" style="text-align: center; font-weight: bold;">Blankets</p>
+     <p id="div2text">Also great gifts for young children in need.</p>
+     <a id="link2" target="_blank">Email</a>
+</div>
+<div id="div3" style="text-align: center;">
+     <p id="div3title" style="text-align: center; font-weight: bold;">Other</p>
+     <p id="div3text">Email a chapter member if you have any questions.</p>
+     <a id="link3" target="_blank">Email</a>
+</div>
+<div id="div4" style="text-align: center;">
+     <p id="div4title" style="text-align: center; font-weight: bold;"></p>
+     <p id="div4text"></p>
+     <a id="link4" target="_blank"></a>
+</div>
+   
+
+
+<hr>
+
+
+<div id="divExpander">
+  <button onclick="WriteControls()">Activate Controls</button>
+</div>
+
+<div id = "divMsg">
+  <i>Click <b>Save</b> to save your changes to the webpage.</i>
+
+  <br/>
+  Change Title:
+  <input type="text" name="FirstName" id="textbox" value="Donate">
+  <button onclick="titler()">Enter</button>
+  <br/>
+
+  Set Heading: <input type="text" id="myHeader" value="Mid-Atlantic SAFE">
+  <button onclick="myHeader()">Enter</button>
+
+  Background:
+  <input type="color" id="headerChanger" value="#ff0000">
+  Text:  
+  <input type="color" id="headerTextChanger" value="#000000">
+  <br/>
+  <br/>
+
+Set Title for Section 1: <input type="text" id="myTitle1" value="My First Title">
+<button onclick="myText1('title')">Enter</button>
+Background:
+<input type="color" id="div1Changer" value="#ff0000">
+Text:  
+<input type="color" id="div1TextChanger" value="#000000">
+
+
+
+<br/>
+Set Text for Section 1: <input type="text" id="myText1" value="My first paragraph of text.">
+  <button onclick="myText1('text')">Enter</button>
+<b>Align: </b>
+  <input type="button" style="background-color: black; color: white;" value="Left" onclick="textAlign1('left')">
+  <input type="button" style="background-color: black; color: white;" value="Center" onclick="textAlign1('center')">
+  <input type="button" style="background-color: black; color: white;" value="Right" onclick="textAlign1('right')">
+
+<br/>
+Set email for Section 1: <input type="text" value="Email" id="linkBox1">
+<button onclick="setHref('linkBox1','link1')">Enter</button>
+ <br/>
+ <br/>
+
+Set Title for Section 2: <input type="text" id="myTitle2" value="My Second Title">
+  <button onclick="myText2('title')">Enter</button>
+  Background:
+  <input type="color" id="div2Changer" value="#ff0000">
+  Text:  
+  <input type="color" id="div2TextChanger" value="#000000">
+
+  <br/>
+Set Text for Section 2: <input type="text" id="myText2" value="My first paragraph of text.">
+  <button onclick="myText2('text')">Enter</button>
+<b>Align: </b>
+  <input type="button" style="background-color: black; color: white;" value="Left" onclick="textAlign2('left')">
+  <input type="button" style="background-color: black; color: white;" value="Center" onclick="textAlign2('center')">
+  <input type="button" style="background-color: black; color: white;" value="Right" onclick="textAlign2('right')">
+
+<br/>
+Set email for Section 2: <input type="text" value="Email" id="linkBox2">
+<button onclick="setHref('linkBox2','link2')">Enter</button>
+
+ <br/>
+ <br/>
+
+Set Title for Section 3: <input type="text" id="myTitle3" value="My Third Title">
+  <button onclick="myText3('title')">Enter</button>
+  Background:
+  <input type="color" id="div3Changer" value="#ff0000">
+  Text:  
+  <input type="color" id="div3TextChanger" value="#000000">
+
+  <br/>
+
+Set Text for Section 3: <input type="text" id="myText3" value="My third paragraph of text.">
+  <button onclick="myText3('text')">Enter</button>
+
+<b>Align: </b>
+  <input type="button" style="background-color: black; color: white;" value="Left" onclick="textAlign3('left')">
+  <input type="button" style="background-color: black; color: white;" value="Center" onclick="textAlign3('center')">
+  <input type="button" style="background-color: black; color: white;" value="Right" onclick="textAlign3('right')">
+
+<br/>
+Set email for Section 3: <input type="text" value="Email" id="linkBox3">
+<button onclick="setHref('linkBox3','link3')">Enter</button>
+  <br/>
+  <br/>
+
+  Set Title for Section 4: <input type="text" id="myTitle4" value="My Fourth Title">
+  <button onclick="myText4('title')">Enter</button>
+  Background:  
+  <input type="color" id="div4Changer" value="#000000">
+  Text:  
+  <input type="color" id="div4TextChanger" value="#000000">
+  <br/>
+  
+  Set Text for Section 4: <input type="text" id="myText4" value="My fourth paragraph of text.">
+  <button onclick="myText4('text')">Enter</button>
+                            
+
+  <b>Align: </b>
+  <input type="button" style="background-color: black; color: white;" value="Left" onclick="textAlign4('left')">
+  <input type="button" style="background-color: black; color: white;" value="Center" onclick="textAlign4('center')">
+  <input type="button" style="background-color: black; color: white;" value="Right" onclick="textAlign4('right')">
+
+<br/>
+Set email for Section 4: <input type="text" value="Email" id="linkBox4">
+<button onclick="setHref('linkBox4','link4')">Enter</button>
+  <br/>
+  <br/>
+  
+  <label>Set color for webpage background: </label>
+  <input type="color" id="bodyChanger" value="#ff0000">
+  <br/>
+ <div style="text-align: center;">
+<button type="button" id="saveButton" style="font-size: 20pt; background-color: black; color: orange; width: 100px; height: 40px;" onclick="getColor()">Save</button>
+ </div>
+
+<button onclick="greet()">Save the Color</button>
+</div>
+
+
+
+
+
+<script>
+//This is for changing webpage and div background color
+
+ //Add some variables
+ var bodyChange;
+ var headerChange;
+ var div1Change;
+ var div2Change;
+ var div3Change;
+ var div4Change;
+ var defaultColor = "#ffffff";
+
+ // Create event listeners for our color pickers
+ window.addEventListener("load", startupBody, false);
+ window.addEventListener("load", startupHeader, false);
+ window.addEventListener("load", startupDiv1, false);
+ window.addEventListener("load", startupDiv2, false);
+ window.addEventListener("load", startupDiv3, false);
+ window.addEventListener("load", startupDiv4, false);
+
+ // Set some things up for the body color changer
+ function startupBody() 
+ {
+  bodyChange = document.querySelector("#bodyChanger");
+  bodyChange.value = defaultColor;
+  bodyChange.addEventListener("input", updateBody, false);
+  bodyChange.select();
+ }
+
+ function startupHeader() 
+ {
+  headerChange = document.querySelector("#headerChanger");
+  headerChange.value = defaultColor;
+  headerChange.addEventListener("input", updateHeader, false);
+  headerChange.select();
+ }
+
+ // Set some things up for the div1 color changer
+ function startupDiv1() 
+ {
+  div1Change = document.querySelector("#div1Changer");
+  div1Change.value = defaultColor;
+  div1Change.addEventListener("input", updateDiv1, false);
+  div1Change.select();
+ }
+
+ // Set some things up for the div2 color changer
+ function startupDiv2() 
+ {
+  div2Change = document.querySelector("#div2Changer");
+  div2Change.value = defaultColor;
+  div2Change.addEventListener("input", updateDiv2, false);
+  div2Change.select();
+ }
+
+ // Set some things up for the div3 color changer
+ function startupDiv3() 
+ {
+  div3Change = document.querySelector("#div3Changer");
+  div3Change.value = defaultColor;
+  div3Change.addEventListener("input", updateDiv3, false);
+  div3Change.select();
+ }
+
+ // Set some things up for the div4 color changer
+ function startupDiv4() 
+ {
+  div4Change = document.querySelector("#div4Changer");
+  div4Change.value = defaultColor;
+  div4Change.addEventListener("input", updateDiv4, false);
+  div4Change.select();
+ }
+
+
+ // update body background color
+ function updateBody(event) 
+ {
+   // Our document body   the style background color   and change it to the target value
+   document.body.style.background = event.target.value;
+   if (typeof (Storage) !== "undefined") 
+   {
+    // Set the local storage color to be our target value
+    var bodyColor = event.target.value;
+    localStorage.setItem('bodyColor', bodyColor);
+   }
+ }
+ 
+ // update body background color
+ function updateHeader(event) 
+ {
+   // Our document body   the style background color   and change it to the target value
+   document.getElementById("header").style.background = event.target.value;
+
+   if (typeof (Storage) !== "undefined") 
+   {
+    // Set the local storage color to be our target value
+    var headerColor = event.target.value;
+    localStorage.setItem('headerColor', headerColor);
+   }
+ }
+
+ // Update the div1 background color
+ function updateDiv1(event)
+ {
+   // Locate div1        the style background color   and change it to the target value
+   document.getElementById("div1").style.background = event.target.value;
+
+   if (typeof (Storage) !== "undefined") 
+   {
+    // Set the local storage color to be our target value
+    var div1Color = event.target.value;
+    localStorage.setItem('div1Color', div1Color);
+   }
+ }
+
+ function updateDiv2(event) 
+ {
+   // Locate div2        the style background color   and change it to the target value
+   document.getElementById("div2").style.background = event.target.value;
+
+   if (typeof (Storage) !== "undefined") 
+   {
+    // Set the local storage color to be our target value
+    var div2Color = event.target.value;
+    localStorage.setItem('div2Color', div2Color);
+   }
+ }
+
+ function updateDiv3(event) 
+ {
+   // Locate div3        the style background color   and change it to the target value
+   document.getElementById("div3").style.background = event.target.value;
+
+   if (typeof (Storage) !== "undefined") 
+   {
+    // Set the local storage color to be our target value
+    var div3Color = event.target.value;
+    localStorage.setItem('div3Color', div3Color);
+   }
+ }
+
+function updateDiv4(event) 
+ {
+   // Locate div4        the style background color   and change it to the target value
+   document.getElementById("div4").style.background = event.target.value;
+
+   if (typeof (Storage) !== "undefined") 
+   {
+    // Set the local storage color to be our target value
+    var div4Color = event.target.value;
+    localStorage.setItem('div4Color', div4Color);
+   }
+ }
+
+
+
+
+
+
+//This is for changing webpage and div text color
+
+ //Add some variables
+ var headerTextChange;
+ var div1TextChange;
+ var div2TextChange;
+ var div3TextChange;
+ var div4TextChange;
+ var defaultTextColor = "#000000";
+
+ // Create event listeners for our color pickers
+ window.addEventListener("load", startupTextHeader, false);
+ window.addEventListener("load", startupTextDiv1, false);
+ window.addEventListener("load", startupTextDiv2, false);
+ window.addEventListener("load", startupTextDiv3, false);
+ window.addEventListener("load", startupTextDiv4, false);
+
+
+ function startupTextHeader() 
+ {
+  headerTextChange = document.querySelector("#headerTextChanger");
+  headerTextChange.value = defaultTextColor;
+  headerTextChange.addEventListener("input", updateTextHeader, false);
+  headerTextChange.select();
+ }
+
+ // Set some things up for the div1 color changer
+ function startupTextDiv1() 
+ {
+  div1TextChange = document.querySelector("#div1TextChanger");
+  div1TextChange.value = defaultTextColor;
+  div1TextChange.addEventListener("input", updateTextDiv1, false);
+  div1TextChange.select();
+ }
+
+ // Set some things up for the div2 color changer
+ function startupTextDiv2() 
+ {
+  div2TextChange = document.querySelector("#div2TextChanger");
+  div2TextChange.value = defaultTextColor;
+  div2TextChange.addEventListener("input", updateTextDiv2, false);
+  div2TextChange.select();
+ }
+
+ // Set some things up for the div3 color changer
+ function startupTextDiv3() 
+ {
+  div3TextChange = document.querySelector("#div3TextChanger");
+  div3TextChange.value = defaultTextColor;
+  div3TextChange.addEventListener("input", updateTextDiv3, false);
+  div3TextChange.select();
+ }
+
+ // Set some things up for the div4 color changer
+ function startupTextDiv4() 
+ {
+  div4TextChange = document.querySelector("#div4TextChanger");
+  div4TextChange.value = defaultTextColor;
+  div4TextChange.addEventListener("input", updateTextDiv4, false);
+  div4TextChange.select();
+ }
+
+
+ // update header text color
+ function updateTextHeader(event) 
+ {
+   // Our document body   the style background color   and change it to the target value
+   document.getElementById("header").style.color = event.target.value;
+ }
+
+ // Update the div1 text color
+ function updateTextDiv1(event)
+ {
+   // Locate div1        the style color       and change it to the target value
+   document.getElementById("div1").style.color = event.target.value;
+ }
+
+ function updateTextDiv2(event) 
+ {
+   // Locate div2        the style color       and change it to the target value
+   document.getElementById("div2").style.color = event.target.value;
+ }
+
+ function updateTextDiv3(event) 
+ {
+   // Locate div3        the style color       and change it to the target value
+   document.getElementById("div3").style.color = event.target.value;
+ }
+
+function updateTextDiv4(event) 
+ {
+   // Locate div4        the style color       and change it to the target value
+   document.getElementById("div4").style.color = event.target.value;
+ }
+
+
+</script>
+
+
+
+<script>
+// Set our background colors to be the saved values from our local storage
+
+// Set the background color of body to the color saved in local storage
+document.body.style.background = localStorage.getItem("bodyColor");
+
+// Set the background color of header to the color saved in local storage
+document.getElementById("header").style.background = localStorage.getItem("headerColor");
+
+// Set the background color of div1 to the color saved in local storage
+document.getElementById("div1").style.background = localStorage.getItem("div1Color");
+
+// Set the background color of div2 to the color saved in local storage
+document.getElementById("div2").style.background = localStorage.getItem("div2Color");
+
+// Set the background color of div3 to the color saved in local storage
+document.getElementById("div3").style.background = localStorage.getItem("div3Color");
+
+// Set the background color of div4 to the color saved in local storage
+document.getElementById("div4").style.background = localStorage.getItem("div4Color");
+
+</script>
+ </body>
+ </html>
