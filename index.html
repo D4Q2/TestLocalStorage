@@ -177,8 +177,7 @@ var title = "Form";
   function WriteControls()
   {
     var SettingsWindow = window.open("Settings", "SettingsWindow", "width=500, height=500");
-    SettingsWindow.document.write("var myWindow = window.open("", "MsgWindow", "width=200,height=100"));
-  myWindow.document.write("<p>This is 'MsgWindow'. I am 200px wide and 100px tall!</p>");");
+    SettingsWindow.document.write("<head><title>Settings</title></head><body><p>This is 'MsgWindow'. I am 200px wide and 100px tall!</p></body>");");
   }
 </script>
 
